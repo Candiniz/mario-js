@@ -1,0 +1,228 @@
+@import url('https://fonts.cdnfonts.com/css/new-super-mario-font-u');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.nav {
+    position: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.logo {
+    width: 10vw;
+    padding-top: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    padding: 6px .3vw 0px .3vw;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-size: 0.9vw;
+    letter-spacing: 1px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+#mariologo {
+    height: 17vh;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 15px solid rgb(84, 145, 59);
+    border-top: 15px solid rgb(101, 164, 201);
+    background: linear-gradient(#87CEEB, #E0F6FF);
+    background-image: url('../images/background.png');
+    background-size: 500px;
+    animation: background-animation 15s linear infinite;
+}
+
+.game-board.stop {
+    animation-play-state: paused;
+  }
+
+.ground {
+    background-image: url('../images/blockground.png');
+    background-repeat:repeat-x;
+    background-size: contain;
+    height: 50px;
+    animation: ground 1.3s infinite linear;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+    width: 130px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: mario-jump 500ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 1000px;
+    animation: clouds-animation1 10s infinite linear;
+    opacity: 50%;
+}
+
+.clouds2 {
+    position: absolute;
+    width: 1000px;
+    animation: clouds-animation2 25s infinite linear;
+    opacity: 50%;
+}
+
+.count {
+    position: absolute;
+    padding-top: 50px;
+    font-size: 2vw;
+    font-family: 'New Super Mario Font U', sans-serif;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-shadow: 0px 0px 20px white;
+}
+
+.countdie {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 1s;
+    text-shadow: 0px 0px 20px white;
+}
+
+.refresh {
+    display: block;
+    opacity: 0;
+    margin: auto;
+    margin-top: 2vh;
+    padding: 2vh;
+    border-radius: 0.5vw;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: white;
+    box-shadow: 0px 0px 20px white;
+    font-family: 'New Super Mario Font U', sans-serif;
+    font-size: 1.3vw;
+}
+
+.refreshshow {
+    transition: 1s;
+    opacity: 100%;
+}
+
+.refresh:hover {
+    background-color: yellow;
+}
+
+
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes ground {
+    from {
+        background-position: 100%;
+    }
+    to {
+        background-position: 0;
+    }
+}
+
+@keyframes mario-jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 170px;
+    }
+    50% {
+        bottom: 170px;
+    }
+    60% {
+        bottom: 170px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation1 {
+    from {
+        right: -1000px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes clouds-animation2 {
+    from {
+        right: -2000px;
+    }
+    to {
+        right: 250%;
+    }
+    
+}
+
+@keyframes background-animation {
+    from {
+        background-position: 100% 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes count-die {
+    0% {
+        color: black;
+        background-color:rgba(0, 0, 0, 0);
+    }
+    100% {
+        color: white;
+        background-color:rgba(0, 0, 0, 0.724);
+    }
+}

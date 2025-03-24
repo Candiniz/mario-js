@@ -8,8 +8,6 @@
 
 Mario.js é um jogo desenvolvido completamente em **JavaScript puro**, sem o uso de frameworks ou bibliotecas externas. Inspirado no **jogo do dinossauro do Google Chrome**, este projeto recria uma versão simples do **Super Mario**, onde o personagem deve correr e pular canos para sobreviver o maior tempo possível.
 
-![Mario GIF](https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif)
-
 ## 🎮 Como Funciona
 
 - O jogador controla o Mario, que corre automaticamente pelo cenário.
